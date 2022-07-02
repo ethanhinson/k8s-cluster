@@ -1,0 +1,26 @@
+# Default values for cert-issuer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+cloudflare:
+  apiKeySecretName: cloudflare-api-token-secret
+  apiKey: # you need to provide an API key to enable this feature.
+
+# Use complete config objects in the `spec` key. See the docs
+# at: https://cert-manager.io/next-docs/configuration/
+# We could add other solvers here as needed.
+clusterIssuer:
+  enabled: true
+  name: lets-encrypt-staging
+  spec:
+    acme:
+      email: devs@yourdomain.com
+      server: https://acme-staging-v02.api.letsencrypt.org/directory
+      privateKeySecretRef:
+        name: example-issuer-secret-name
+      solvers:
+        - dns01:
+            cloudflare:
+              email: my-cloudflare-acc@example.com
+              apiKeySecretRef:
+                name: cloudflare-api-token-secret
+                key: api-token

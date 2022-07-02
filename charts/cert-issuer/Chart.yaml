@@ -1,0 +1,10 @@
+apiVersion: v2
+name: cert-issuer
+description: Provides secrets and issuer resources for interacting with `jetstack.io/cert-manager`
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
+dependencies:
+  - name: cert-manager
+    repository: https://charts.jetstack.io
+    version: "1.6.1"
