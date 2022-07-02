@@ -7,8 +7,8 @@ fi
 echo "Installing/Updating the cluster...this can take some time"
 
 terraform init
-terraform plan -out ./dist/plan
-terraform apply "./dist/plan"
+terraform plan -out ./dist/manifest
+terraform apply "./dist/manifest"
 
 echo "Installing cert-manager"
 

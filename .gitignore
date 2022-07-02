@@ -3,3 +3,4 @@
 dist
 charts/*/charts
 bin/values.yaml
+.idea
