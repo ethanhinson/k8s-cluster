@@ -2,3 +2,4 @@
 *.tfstate*
 dist
 charts/*/charts
+bin/values.yaml
